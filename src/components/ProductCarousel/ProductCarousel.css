@@ -1,0 +1,151 @@
+/* ANUSTHAN — Product Showcase Catalogue with Approved Rice10 Background */
+.anusthan-carousel-section {
+  padding: 110px 0;
+  background: linear-gradient(180deg, rgba(28, 18, 12, 0.52) 0%, rgba(18, 10, 6, 0.68) 50%, rgba(28, 18, 12, 0.56) 100%), url('/images/rice10.webp') center/cover no-repeat;
+  border-top: 2px solid #C6A15B;
+  border-bottom: 2px solid #C6A15B;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+.anusthan-carousel-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header & Navigation Arrow Controls Placement */
+.anusthan-carousel-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+.anusthan-carousel-title-group {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+}
+
+.anusthan-carousel-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: block;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.anusthan-carousel-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+  font-weight: 700;
+  color: #F8F4EA;
+  margin: 0 0 10px;
+  line-height: 1.2;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+.anusthan-carousel-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  color: #EFE6D4;
+  margin: 0;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Arrow Controls */
+.anusthan-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.anusthan-carousel-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(18, 12, 8, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid #C6A15B;
+  color: #F8F4EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.anusthan-carousel-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.anusthan-carousel-arrow:hover {
+  background: #7A2025;
+  border-color: #F8F4EA;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.anusthan-carousel-arrow:active {
+  transform: scale(0.96);
+}
+
+/* Horizontal Scroll Window & Track */
+.anusthan-carousel-track-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  padding: 20px 4px 36px;
+  outline: none;
+}
+
+.anusthan-carousel-track-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.anusthan-carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  width: max-content;
+}
+
+@media (max-width: 767px) {
+  .anusthan-carousel-section {
+    padding: 60px 0;
+  }
+  .anusthan-carousel-container {
+    padding: 0 16px;
+  }
+  .anusthan-carousel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .anusthan-carousel-arrow {
+    width: 42px;
+    height: 42px;
+  }
+  .anusthan-carousel-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  .anusthan-carousel-track {
+    gap: 18px;
+  }
+}

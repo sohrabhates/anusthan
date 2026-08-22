@@ -1,0 +1,144 @@
+/* ANUSTHAN — Warm Charcoal Brand Manifesto Composition */
+.anusthan-why-section {
+  padding: 110px 32px;
+  background-color: #1C1917;
+  border-bottom: 1px solid #C6A15B;
+  position: relative;
+}
+
+.anusthan-why-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Left Editorial Manifesto Column */
+.why-statement-column {
+  max-width: 520px;
+}
+
+.why-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.why-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  color: #F8F4EA;
+  margin: 0 0 20px;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.why-paragraph {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #EFE6D4;
+  margin: 0;
+}
+
+/* Right Vertical Manifesto Items Column */
+.why-points-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-point-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(198, 161, 91, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.why-point-card:first-child {
+  padding-top: 0;
+}
+
+.why-point-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.why-point-card:hover {
+  transform: translateX(6px);
+}
+
+.why-point-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #C6A15B;
+  line-height: 1;
+  min-width: 44px;
+  padding-top: 2px;
+}
+
+.why-point-content {
+  flex: 1;
+}
+
+.why-point-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F8F4EA;
+  margin: 0 0 8px;
+}
+
+.why-point-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #e5dac9;
+  margin: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .anusthan-why-section {
+    padding: 72px 24px;
+  }
+  .anusthan-why-container {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .why-statement-column {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .anusthan-why-section {
+    padding: 48px 16px;
+  }
+  .anusthan-why-container {
+    gap: 32px;
+  }
+  .why-point-card {
+    gap: 18px;
+    padding: 20px 0;
+  }
+  .why-point-number {
+    font-size: 2rem;
+    min-width: 36px;
+  }
+}

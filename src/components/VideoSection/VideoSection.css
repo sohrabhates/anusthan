@@ -1,0 +1,118 @@
+/* ANUSTHAN — Cinematic YouTube Video Section */
+.anusthan-video-section {
+  padding: 100px 32px;
+  background-color: #F8F4EA;
+  background-image: radial-gradient(#C6A15B 0.35px, transparent 0.35px), radial-gradient(#7A2025 0.35px, #F8F4EA 0.35px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  border-bottom: 1px solid #D6BD8A;
+  position: relative;
+}
+
+.anusthan-video-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Restrained Editorial Header */
+.anusthan-video-header {
+  text-align: center;
+  max-width: 640px;
+  margin-bottom: 44px;
+}
+
+.video-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.video-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  color: #7A2025;
+  margin: 0 0 14px;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+.video-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #5c5245;
+  margin: 0;
+}
+
+/* Cinematic Frame Wrapper */
+.anusthan-video-frame-wrapper {
+  width: 100%;
+  max-width: 1140px;
+  background-color: #1C1917;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid #C6A15B;
+  box-shadow: 0 24px 60px rgba(28, 25, 23, 0.22), 0 8px 24px rgba(122, 32, 37, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.anusthan-video-frame-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 72px rgba(28, 25, 23, 0.28), 0 12px 30px rgba(122, 32, 37, 0.16);
+}
+
+/* Responsive 16:9 Aspect Ratio Embed */
+.anusthan-video-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #12100E;
+}
+
+.anusthan-video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .anusthan-video-section {
+    padding: 72px 24px;
+  }
+  .anusthan-video-header {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .anusthan-video-section {
+    padding: 48px 16px;
+  }
+  .anusthan-video-header {
+    margin-bottom: 24px;
+  }
+  .anusthan-video-frame-wrapper {
+    padding: 8px;
+    border-radius: 10px;
+  }
+  .anusthan-video-responsive {
+    border-radius: 6px;
+  }
+}

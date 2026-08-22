@@ -1,0 +1,177 @@
+/* ANUSTHAN — Quality Photo Story Editorial Spread */
+.anusthan-quality-section {
+  padding: 100px 24px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #D6BD8A;
+  position: relative;
+}
+
+.anusthan-quality-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Header */
+.quality-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px;
+}
+
+.quality-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.quality-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0 0 16px;
+  line-height: 1.22;
+}
+
+.quality-paragraph {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5c5245;
+  margin: 0;
+}
+
+/* Feature Hero Process Banner */
+.quality-banner-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 32vw, 460px);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 44px;
+  border: 2px solid #C6A15B;
+  box-shadow: 0 16px 44px -14px rgba(18, 63, 67, 0.22);
+}
+
+.quality-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.quality-banner-frame:hover .quality-banner-img {
+  transform: scale(1.03);
+}
+
+.quality-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(18, 63, 67, 0.08) 0%, 
+    rgba(18, 63, 67, 0.4) 100%
+  );
+}
+
+/* 3 Real Photography Process Cards Grid */
+.quality-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.quality-step-card {
+  background: #F8F4EA;
+  border-radius: 10px;
+  border: 1px solid #D6BD8A;
+  overflow: hidden;
+  box-shadow: 0 8px 24px -10px rgba(33, 30, 26, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.quality-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px -10px rgba(122, 32, 37, 0.22);
+  border-color: #C6A15B;
+}
+
+.quality-step-img-box {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: #EFE6D4;
+}
+
+.quality-step-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.quality-step-card:hover .quality-step-img {
+  transform: scale(1.06);
+}
+
+.quality-step-label-box {
+  padding: 18px 16px;
+  text-align: center;
+  background: #F8F4EA;
+  border-top: 1px solid #EFE6D4;
+}
+
+.quality-step-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #1C1917;
+  text-transform: uppercase;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .anusthan-quality-section {
+    padding: 64px 20px;
+  }
+  .quality-header {
+    margin-bottom: 36px;
+  }
+  .quality-banner-frame {
+    height: 320px;
+    margin-bottom: 32px;
+  }
+  .quality-steps-grid {
+    gap: 20px;
+  }
+  .quality-step-img-box {
+    height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .anusthan-quality-section {
+    padding: 44px 16px;
+  }
+  .quality-banner-frame {
+    height: 230px;
+    margin-bottom: 24px;
+  }
+  .quality-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quality-step-img-box {
+    height: 200px;
+  }
+}

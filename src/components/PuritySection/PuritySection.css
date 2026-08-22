@@ -1,0 +1,378 @@
+/* ANUSTHAN — Best Standard Of Purity Editorial Section */
+.anusthan-purity-section {
+  padding: 100px 32px;
+  background-color: #EFE6D4;
+  background-image: radial-gradient(#C6A15B 0.4px, transparent 0.4px), radial-gradient(#7A2025 0.4px, #EFE6D4 0.4px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  border-bottom: 1px solid #D6BD8A;
+  position: relative;
+}
+
+.anusthan-purity-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Column Base Styling */
+.purity-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LEFT COLUMN: Large Portrait Image */
+.purity-left-column {
+  justify-content: center;
+}
+
+.purity-image-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #C6A15B;
+  box-shadow: 0 16px 40px rgba(28, 25, 23, 0.15);
+  cursor: pointer;
+  background-color: #1C1917;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.purity-image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(28, 25, 23, 0.25);
+  border-color: #7A2025;
+}
+
+.purity-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.primary-card .primary-img {
+  height: 480px;
+}
+
+.secondary-card .secondary-img {
+  height: 220px;
+}
+
+.purity-image-card:hover .purity-img {
+  transform: scale(1.04);
+}
+
+/* Zoom Hover Badge */
+.purity-zoom-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(28, 25, 23, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid #C6A15B;
+  color: #F8F4EA;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.purity-image-card:hover .purity-zoom-badge {
+  opacity: 1;
+  background: #7A2025;
+  border-color: #F8F4EA;
+}
+
+.purity-zoom-badge.mini {
+  padding: 8px;
+  border-radius: 50%;
+  bottom: 12px;
+  right: 12px;
+}
+
+/* CENTER COLUMN: Editorial Typography & Content */
+.purity-center-column {
+  padding: 0 8px;
+}
+
+.purity-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.purity-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: #7A2025;
+  margin: 0 0 24px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.purity-quality-points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  background: #F8F4EA;
+  border-radius: 10px;
+  border-left: 3px solid #7A2025;
+  border-right: 1px solid #D6BD8A;
+  border-top: 1px solid #D6BD8A;
+  border-bottom: 1px solid #D6BD8A;
+  box-shadow: 0 4px 16px rgba(28, 25, 23, 0.05);
+}
+
+.purity-point-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.purity-point-icon {
+  color: #C6A15B;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.purity-point-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0;
+}
+
+.purity-body-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #5c5245;
+  margin: 0 0 28px;
+}
+
+.purity-cta-wrapper {
+  display: flex;
+}
+
+.mobile-cta {
+  display: none;
+  margin-top: 20px;
+}
+
+.purity-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background-color: #7A2025;
+  color: #F8F4EA;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #C6A15B;
+  box-shadow: 0 6px 20px rgba(122, 32, 37, 0.25);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.purity-cta-btn:hover {
+  background-color: #5c181c;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(122, 32, 37, 0.35);
+}
+
+/* RIGHT COLUMN: 20+ Years Experience Card */
+.purity-right-column {
+  gap: 24px;
+}
+
+.purity-experience-card {
+  padding: 24px;
+  background: #F8F4EA;
+  border-radius: 14px;
+  border: 1px solid #C6A15B;
+  box-shadow: 0 8px 24px rgba(28, 25, 23, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.experience-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #7A2025;
+  line-height: 1;
+}
+
+.experience-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-text strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #C6A15B;
+}
+
+.experience-text span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #1C1917;
+}
+
+/* LIGHTBOX MODAL OVERLAY */
+.anusthan-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: rgba(18, 12, 8, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content-box {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  background: #1C1917;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #C6A15B;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #7A2025;
+  border: 2px solid #F8F4EA;
+  color: #F8F4EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, background 0.25s ease;
+  z-index: 2;
+}
+
+.lightbox-close-btn:hover {
+  transform: scale(1.1);
+  background: #94272e;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-caption {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #EFE6D4;
+  margin: 10px 0 2px;
+  text-align: center;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .anusthan-purity-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .purity-right-column {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+  }
+  .purity-experience-card {
+    flex: 1;
+  }
+  .secondary-card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .anusthan-purity-section {
+    padding: 48px 16px;
+  }
+  .anusthan-purity-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .purity-right-column {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+  .primary-card .primary-img {
+    height: 320px;
+  }
+  .secondary-card .secondary-img {
+    height: 180px;
+  }
+  .desktop-cta {
+    display: none;
+  }
+  .mobile-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .purity-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .lightbox-close-btn {
+    top: 8px;
+    right: 8px;
+  }
+}

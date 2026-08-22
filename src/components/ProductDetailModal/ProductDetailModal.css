@@ -1,0 +1,221 @@
+/* ANUSTHAN — Premium Floating FMCG Product Detail Modal */
+.anusthan-product-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: rgba(18, 12, 8, 0.86);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.product-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 2px solid #C6A15B;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.75), 0 12px 30px rgba(122, 32, 37, 0.25);
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  overflow: hidden;
+}
+
+.product-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #7A2025;
+  border: 2px solid #F8F4EA;
+  color: #F8F4EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, background 0.25s ease;
+  z-index: 10;
+}
+
+.product-modal-close-btn:hover {
+  transform: scale(1.1);
+  background: #94272e;
+}
+
+/* Image Column for Finished Studio Packshots */
+.product-modal-image-col {
+  background: #FDFBF7;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #EFE6D4;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-modal-image-frame {
+  width: 100%;
+  height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.product-modal-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(40, 25, 12, 0.18));
+}
+
+/* Info & Action Column */
+.product-modal-info-col {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-modal-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.product-modal-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #7A2025;
+  margin: 0 0 24px;
+  line-height: 1.2;
+}
+
+.product-modal-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding: 18px 20px;
+  background: #F8F4EA;
+  border-radius: 10px;
+  border: 1px solid #D6BD8A;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C6A15B;
+}
+
+.spec-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1C1917;
+}
+
+.product-modal-actions {
+  display: flex;
+}
+
+.product-modal-enquire-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 24px;
+  background-color: #25D366;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #C6A15B;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-modal-enquire-btn:hover {
+  background-color: #20bd5a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 767px) {
+  .anusthan-product-modal-overlay {
+    padding: 16px;
+  }
+  .product-modal-container {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .product-modal-image-col {
+    padding: 20px 14px;
+    border-right: none;
+    border-bottom: 1px solid #EFE6D4;
+  }
+  .product-modal-image-frame {
+    height: 250px;
+  }
+  .product-modal-info-col {
+    padding: 24px 20px;
+  }
+  .product-modal-title {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+  .product-modal-specs {
+    margin-bottom: 24px;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .product-modal-enquire-btn {
+    padding: 13px 18px;
+    font-size: 0.88rem;
+  }
+}

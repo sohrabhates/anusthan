@@ -1,0 +1,184 @@
+/* ANUSTHAN — Asymmetric Editorial Heritage & Brand Intro Composition */
+.anusthan-brand-intro-section {
+  position: relative;
+  background-color: #EFE6D4;
+  padding: 100px 24px;
+  border-bottom: 1px solid #D6BD8A;
+  overflow: hidden;
+}
+
+.brand-intro-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(6rem, 16vw, 18rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: rgba(198, 161, 91, 0.08);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.anusthan-brand-intro-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Image Presentation (~55% Width) */
+.brand-intro-image-column {
+  width: 100%;
+}
+
+.brand-intro-image-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 42vw, 520px);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px -12px rgba(18, 63, 67, 0.22);
+  border: 2px solid #C6A15B;
+}
+
+.brand-intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.brand-intro-image-frame:hover .brand-intro-img {
+  transform: scale(1.03);
+}
+
+/* Editorial Copy Presentation */
+.brand-intro-content-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(248, 244, 234, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 44px 40px;
+  border-radius: 8px;
+  border: 1px solid #D6BD8A;
+  box-shadow: 0 10px 30px rgba(33, 30, 26, 0.06);
+  position: relative;
+  z-index: 3;
+}
+
+.brand-intro-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  margin-bottom: 14px;
+}
+
+.brand-intro-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.22;
+  color: #1C1917;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+}
+
+.brand-intro-paragraph {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.96rem, 1.15vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #5c5245;
+  margin: 0 0 16px;
+}
+
+.brand-intro-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.brand-intro-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1C1917;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: rgba(239, 230, 212, 0.5);
+  border-left: 3px solid #C6A15B;
+  border-radius: 4px;
+}
+
+.highlight-icon {
+  color: #7A2025;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+.brand-intro-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #7A2025;
+  text-decoration: none;
+  border-bottom: 1.5px solid #7A2025;
+  padding-bottom: 4px;
+  transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+}
+
+.brand-intro-cta:hover {
+  color: #92262c;
+  border-color: #92262c;
+  gap: 12px;
+}
+
+/* Responsive Layout */
+@media (max-width: 991px) {
+  .anusthan-brand-intro-section {
+    padding: 64px 20px;
+  }
+  .anusthan-brand-intro-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .brand-intro-content-column {
+    padding: 32px 24px;
+  }
+  .brand-intro-image-frame {
+    height: 340px;
+  }
+}
+
+@media (max-width: 767px) {
+  .anusthan-brand-intro-section {
+    padding: 44px 16px;
+  }
+  .brand-intro-image-frame {
+    height: 260px;
+  }
+}

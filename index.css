@@ -1,0 +1,105 @@
+/* ANUSTHAN — Premium Bengali FMCG Warm Heritage Design Tokens */
+:root {
+  --primary-color: #7A2025;       /* Bengal Burgundy */
+  --primary-hover: #5c181c;
+  --bg-ivory: #F8F4EA;            /* Warm Ivory */
+  --bg-cream: #EFE6D4;            /* Warm Cream */
+  --bg-charcoal: #1C1917;         /* Warm Dark Charcoal */
+  --bg-card: #FFFFFF;
+  --accent-gold: #C6A15B;         /* Antique Gold */
+  --accent-gold-light: #f4eaad;
+  --text-charcoal: #1C1917;       /* Deep Charcoal */
+  --text-muted: #5c5245;
+  --text-light: #F8F4EA;
+  --border-gold: #D6BD8A;
+  --border-light: #E5DBC7;
+  
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", sans-serif;
+  --shadow-subtle: 0 4px 20px rgba(28, 25, 23, 0.06);
+  --shadow-premium: 0 16px 48px rgba(28, 25, 23, 0.2);
+  --shadow-card: 0 8px 28px rgba(28, 25, 23, 0.08);
+  --shadow-hover: 0 20px 40px rgba(122, 32, 37, 0.22);
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-fast: all 0.15s ease;
+  --max-width: 1320px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-ivory);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  /* Subtle warm grain micro-texture */
+  background-image: radial-gradient(#C6A15B 0.4px, transparent 0.4px), radial-gradient(#7A2025 0.4px, #F8F4EA 0.4px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--text-charcoal);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+a {
+  color: inherit;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-gold);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.app-container {
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Subtle Editorial Bengali Gold Separator Rule */
+.anusthan-editorial-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 40px auto;
+  max-width: 320px;
+}
+
+.anusthan-editorial-rule::before,
+.anusthan-editorial-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C6A15B, transparent);
+}
+
+.anusthan-editorial-rule-symbol {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #C6A15B;
+  line-height: 1;
+}

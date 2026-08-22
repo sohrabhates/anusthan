@@ -1,0 +1,107 @@
+.anusthan-page-hero {
+  position: relative;
+  background: #1C1917;
+  background-image: radial-gradient(circle at 50% 30%, rgba(198, 161, 91, 0.18) 0%, rgba(28, 25, 23, 0.98) 70%), url('/images/rice10.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 24px 70px;
+  text-align: center;
+  border-bottom: 2px solid #C6A15B;
+  overflow: hidden;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.page-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #A8A29E;
+  margin-bottom: 18px;
+}
+
+.page-hero-breadcrumb a {
+  color: #C6A15B;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.page-hero-breadcrumb a:hover {
+  color: #F8F4EA;
+}
+
+.breadcrumb-separator {
+  color: #78716C;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.breadcrumb-current {
+  color: #F8F4EA;
+}
+
+.page-hero-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #C6A15B;
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 14px;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  border-radius: 20px;
+}
+
+.page-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: #F8F4EA;
+  margin: 0 0 16px;
+  line-height: 1.18;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.page-hero-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 400;
+  color: #D6D3D1;
+  max-width: 720px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .anusthan-page-hero {
+    padding: 100px 18px 50px;
+  }
+  .page-hero-eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+  }
+}
