@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 280px;
+  min-width: 0;
   flex-shrink: 0;
   gap: 12px;
   box-sizing: border-box;
@@ -134,26 +135,53 @@
   flex-shrink: 0;
 }
 
-/* Responsive Mobile Sizing */
+/* Carousel Specific Track Card Width Constraint */
+.anusthan-carousel-track .anusthan-product-card-wrapper {
+  width: clamp(240px, 82vw, 280px);
+  flex-shrink: 0;
+}
+
+/* Responsive Mobile Sizing for Grid & Cards */
 @media (max-width: 767px) {
   .anusthan-product-card-wrapper {
-    width: clamp(250px, 84vw, 290px);
-    flex-shrink: 0;
-    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 8px;
   }
   .product-card-image-wrap {
-    height: 215px;
-    padding: 10px;
+    height: 180px;
+    padding: 8px;
+  }
+  .product-card-body {
+    padding: 10px 8px;
   }
   .product-card-title {
-    font-size: 1.02rem;
+    font-size: 0.92rem;
+    line-height: 1.25;
   }
   .product-card-wa-btn {
-    padding: 9px 14px;
-    font-size: 0.82rem;
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    gap: 5px;
+    border-radius: 18px;
   }
-  .anusthan-product-card:active,
-  .anusthan-product-card.elevated {
-    transform: translateY(-6px);
+  .product-card-wa-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .product-card-image-wrap {
+    height: 165px;
+    padding: 6px;
+  }
+  .product-card-title {
+    font-size: 0.88rem;
+  }
+  .product-card-wa-btn {
+    padding: 7px 8px;
+    font-size: 0.72rem;
   }
 }

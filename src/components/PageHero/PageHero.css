@@ -1,13 +1,17 @@
 .anusthan-page-hero {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background: #1C1917;
   background-image: radial-gradient(circle at 50% 30%, rgba(198, 161, 91, 0.12) 0%, rgba(28, 25, 23, 0.75) 70%), url('/images/hero/hero1.jpeg');
   background-size: cover;
   background-position: center;
-  padding: 130px 24px 75px;
+  padding: 110px 20px 65px;
   text-align: center;
   border-bottom: 2px solid #C6A15B;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .page-hero-overlay {
@@ -21,11 +25,13 @@
 .page-hero-container {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .page-hero-breadcrumb {
@@ -78,7 +84,7 @@
 
 .page-hero-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 700;
   color: #F8F4EA;
   margin: 0 0 16px;
@@ -88,7 +94,7 @@
 
 .page-hero-description {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   font-weight: 400;
   color: #D6D3D1;
   max-width: 720px;
@@ -98,10 +104,6 @@
 
 @media (max-width: 767px) {
   .anusthan-page-hero {
-    padding: 100px 18px 50px;
-  }
-  .page-hero-eyebrow {
-    font-size: 0.74rem;
-    letter-spacing: 0.22em;
+    padding: 36px 16px 45px;
   }
 }

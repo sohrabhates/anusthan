@@ -27,10 +27,25 @@
   --radius-sm: 6px;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html,
+body,
+#anusthan-root,
+#root,
+.app-container,
+.anusthan-app {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 html {
@@ -43,7 +58,6 @@ body {
   color: var(--text-charcoal);
   line-height: 1.6;
   position: relative;
-  overflow-x: hidden;
   /* Subtle warm grain micro-texture */
   background-image: radial-gradient(#C6A15B 0.4px, transparent 0.4px), radial-gradient(#7A2025 0.4px, #F8F4EA 0.4px);
   background-size: 24px 24px;
@@ -98,8 +112,6 @@ img {
 }
 
 .anusthan-editorial-rule-symbol {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  color: #C6A15B;
-  line-height: 1;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
 }
