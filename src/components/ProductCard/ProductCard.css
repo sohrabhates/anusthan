@@ -1,7 +1,16 @@
-/* ANUSTHAN — Single Product Card Catalogue Item Floating Above Rice Surface */
-.anusthan-product-card {
+/* ANUSTHAN — Product Card Container with WhatsApp Enquiry Button Below */
+.anusthan-product-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 280px;
   flex-shrink: 0;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.anusthan-product-card {
+  width: 100%;
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid #D6BD8A;
@@ -19,20 +28,19 @@
 }
 
 .anusthan-product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.65), 0 8px 18px rgba(122, 32, 37, 0.35);
   border-color: #C6A15B;
 }
 
-/* Tactile Tap/Click Floating Elevation Effect (8-12px lift) */
 .anusthan-product-card:active,
 .anusthan-product-card.elevated {
-  transform: translateY(-11px);
+  transform: translateY(-9px);
   box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.75), 0 12px 26px rgba(122, 32, 37, 0.45);
   border-color: #7A2025;
 }
 
-/* Clean Product Image Wrapper Frame (Increased height by ~12% from 240px to 265px) */
+/* Product Image Wrapper Frame */
 .product-card-image-wrap {
   width: 100%;
   height: 265px;
@@ -44,9 +52,9 @@
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #E5DBC7;
+  box-sizing: border-box;
 }
 
-/* Prominent Finished Product Photograph (10-15% larger presentation) */
 .product-card-image {
   width: 100%;
   height: 100%;
@@ -91,9 +99,44 @@
   color: #7A2025;
 }
 
+/* "Enquire on WhatsApp" Action Button Directly Below Card */
+.product-card-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  background-color: #25D366;
+  color: #ffffff;
+  border: 1.5px solid #C6A15B;
+  border-radius: 24px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(28, 25, 23, 0.25);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.product-card-wa-btn:hover {
+  background-color: #20bd5a;
+  border-color: #F8F4EA;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 25, 23, 0.4);
+}
+
+.product-card-wa-btn svg {
+  flex-shrink: 0;
+}
+
 @media (max-width: 767px) {
-  .anusthan-product-card {
+  .anusthan-product-card-wrapper {
     width: 235px;
+    gap: 10px;
   }
   .product-card-image-wrap {
     height: 220px;
@@ -102,8 +145,12 @@
   .product-card-title {
     font-size: 1.02rem;
   }
+  .product-card-wa-btn {
+    padding: 9px 14px;
+    font-size: 0.8rem;
+  }
   .anusthan-product-card:active,
   .anusthan-product-card.elevated {
-    transform: translateY(-9px);
+    transform: translateY(-7px);
   }
 }

@@ -44,8 +44,8 @@ export const Footer = () => {
             <li><Link to="/our-rice">Superior Miniket</Link></li>
             <li><Link to="/our-rice">Special Banskati</Link></li>
             <li><Link to="/our-rice">Ratna Premium</Link></li>
-            <li><Link to="/our-rice">Classic Long Grain</Link></li>
-            <li><Link to="/our-rice">Swarna Quality</Link></li>
+            <li><Link to="/our-rice">Special Jeerakati</Link></li>
+            <li><Link to="/our-rice">Husking Miniket</Link></li>
             <li><Link to="/our-rice">1010 Parboiled Rice</Link></li>
           </ul>
         </div>

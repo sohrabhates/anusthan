@@ -13,7 +13,7 @@ export const heroSlides = [
   },
   {
     id: "hero-slide-2",
-    image: "/images/hero/hero1.png",
+    image: "/images/hero/hero1.jpeg",
     eyebrow: "ANUSTHAN",
     title: "Taste of Bengal",
     subtitle: "Rice for every table.",
@@ -59,39 +59,41 @@ export const qualityProcess = {
     },
     {
       id: "qp-step-3",
-      label: "READY FOR EVERY TABLE",
-      image: "/images/rice5.webp",
-      imageAlt: "Prepared rice dining presentation"
+      label: "HYGIENIC PACKAGING",
+      image: "/images/factory/f1.jpg",
+      imageAlt: "Packaging photography"
     }
   ]
 };
 
 export const whyAnusthan = {
-  eyebrow: "WHY ANUSTHAN",
-  title: "A Collection for Every Table",
-  paragraph: "Explore a considered collection of rice varieties, presented across different names and packaging styles.",
+  eyebrow: "WHY CHOOSE ANUSTHAN",
+  title: "Built on Quality, Defined by Taste",
   points: [
     {
       number: "01",
-      title: "A VARIED COLLECTION",
-      description: "23 product records across the Anusthan portfolio."
+      title: "Direct Sourcing",
+      description: "Directly from the fertile paddy fields of Purba Bardhaman to our modern mill."
     },
     {
       number: "02",
-      title: "DISTINCT VARIETIES",
-      description: "Different rice varieties and product names across the collection."
+      title: "Sortex Precision",
+      description: "Laser color sorting guarantees 100% pure, discolored-grain-free rice."
     },
     {
       number: "03",
-      title: "ONE PORTFOLIO",
-      description: "A single collection bringing the Anusthan range together."
+      title: "Silky Polish",
+      description: "Gentle mist polishing retains the nutrient core while giving a pearl finish."
     }
   ]
 };
 
 export const brandInfo = {
   name: "Anusthan",
+  fullName: "Goodpoint Agro Products",
   tagline: "Exquisite Rice & Recipes",
-  company: "Goodpoint Agro Products",
+  phone: "+91 9647155570",
+  email: "info@goodpointagro.com",
+  address: "Purba Bardhaman, West Bengal, India",
   logo: "/images/logo/logo.webp"
 };

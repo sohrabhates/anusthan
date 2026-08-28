@@ -42,7 +42,7 @@ export const Hero = () => {
           return (
             <div 
               key={slide.id} 
-              className={`hero-slide ${isActive ? 'active' : ''}`}
+              className={`hero-slide ${slide.id} ${isActive ? 'active' : ''}`}
               aria-hidden={!isActive}
             >
               {/* Full Width Imagery */}

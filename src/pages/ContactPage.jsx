@@ -111,8 +111,8 @@ export const ContactPage = () => {
                           <option value="Superior Miniket">Superior Miniket</option>
                           <option value="Special Banskati">Special Banskati</option>
                           <option value="Ratna Premium">Ratna Premium</option>
-                          <option value="Classic Long Grain">Classic Long Grain</option>
-                          <option value="Swarna / 1010 Rice">Swarna / 1010 Rice</option>
+                          <option value="Special Jeerakati">Special Jeerakati</option>
+                          <option value="1010 Parboiled Rice">1010 Parboiled Rice</option>
                           <option value="Bulk Agro Export">Bulk Agro Export</option>
                         </select>
                       </div>

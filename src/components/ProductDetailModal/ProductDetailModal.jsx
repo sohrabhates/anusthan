@@ -73,14 +73,6 @@ export const ProductDetailModal = ({ product, onClose }) => {
               <span className="spec-value">Silky Sortex Cleaned & Polished</span>
             </div>
             <div className="spec-item">
-              <span className="spec-label">Aging Process</span>
-              <span className="spec-value">18+ Months Aged</span>
-            </div>
-            <div className="spec-item">
-              <span className="spec-label">Origin & Milling</span>
-              <span className="spec-value">Purba Bardhaman, West Bengal</span>
-            </div>
-            <div className="spec-item">
               <span className="spec-label">Manufacturer</span>
               <span className="spec-value">Goodpoint Agro Products</span>
             </div>

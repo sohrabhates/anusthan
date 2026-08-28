@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PageHero from '../components/PageHero/PageHero';
 import ProductCard from '../components/ProductCard/ProductCard';
 import productsData from '../data/products';
-import getProductImage from '../data/productImageMap';
 import './OurRicePage.css';
 
 export const OurRicePage = ({ onSelectProduct }) => {
@@ -13,8 +12,8 @@ export const OurRicePage = ({ onSelectProduct }) => {
     { id: 'ALL', label: 'All Varieties' },
     { id: 'MINIKET', label: 'Miniket' },
     { id: 'RATNA', label: 'Ratna' },
-    { id: 'LONG_GRAIN', label: 'Classic & Long Grain' },
-    { id: 'SWARNA', label: 'Swarna & 1010' }
+    { id: 'BANSKATI', label: 'Banskati & Jeerakati' },
+    { id: '1010', label: '1010 Rice' }
   ];
 
   const filterProducts = (product) => {
@@ -26,8 +25,8 @@ export const OurRicePage = ({ onSelectProduct }) => {
 
     if (activeCategory === 'MINIKET') return name.includes('miniket') || name.includes('minikit');
     if (activeCategory === 'RATNA') return name.includes('ratna');
-    if (activeCategory === 'LONG_GRAIN') return name.includes('long grain') || name.includes('banskati') || name.includes('jeerakati');
-    if (activeCategory === 'SWARNA') return name.includes('swarna') || name.includes('1010') || name.includes('4094');
+    if (activeCategory === 'BANSKATI') return name.includes('banskati') || name.includes('jeerakati');
+    if (activeCategory === '1010') return name.includes('1010');
 
     return true;
   };
@@ -103,12 +102,11 @@ export const OurRicePage = ({ onSelectProduct }) => {
           {filteredProducts.length > 0 ? (
             <div className="catalogue-products-grid">
               {filteredProducts.map((product) => (
-                <div key={product.id} className="grid-product-card-wrap">
-                  <ProductCard 
-                    product={product} 
-                    onClick={(p) => onSelectProduct && onSelectProduct(p)}
-                  />
-                </div>
+                <ProductCard 
+                  key={product.id}
+                  product={product} 
+                  onClick={(p) => onSelectProduct && onSelectProduct(p)}
+                />
               ))}
             </div>
           ) : (
