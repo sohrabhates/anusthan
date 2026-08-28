@@ -1,7 +1,6 @@
 /* ==========================================================================
-   ANUSTHAN — FULL-BLEED CINEMATIC MASTER HERO BANNER SYSTEM
-   Stage 1: Full-Bleed 100% Viewport Breadth (Edge-to-Edge, Zero Side Gaps)
-   Stage 2: Proportional Responsive Scaling Across Desktop, Tablet & Mobile
+   ANUSTHAN — FULL-BLEED CINEMATIC HERO BANNER SYSTEM
+   True Word-By-Word Sequential Text Entrance Animation
    ========================================================================== */
 
 .anusthan-hero-section {
@@ -44,7 +43,7 @@
   z-index: 2;
 }
 
-/* Background Image Box & Crisp Overlay Gradient */
+/* Background Image Box & Crisp Overlay Gradient — Completely Stable */
 .hero-image-box {
   position: absolute;
   inset: 0;
@@ -58,11 +57,8 @@
   object-fit: cover;
   object-position: center;
   image-rendering: -webkit-optimize-contrast;
-  transition: transform 6s ease-out;
-}
-
-.hero-slide.active .hero-img {
-  transform: scale(1.01);
+  /* NO scale zoom or image animation */
+  transform: none !important;
 }
 
 .hero-overlay {
@@ -96,8 +92,9 @@
   text-align: left;
 }
 
+/* Eyebrow Label */
 .hero-eyebrow {
-  display: inline-block;
+  display: block;
   font-family: 'Outfit', sans-serif;
   font-size: clamp(0.75rem, 1.2vw, 0.92rem);
   font-weight: 700;
@@ -106,37 +103,23 @@
   color: #C6A15B;
   margin-bottom: clamp(8px, 1.4vw, 18px);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
 }
 
-.hero-slide.active .hero-eyebrow {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Main Heading */
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.85rem, 4.5vw, 5.2rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
   color: #F8F4EA;
   margin: 0 0 clamp(10px, 1.6vw, 22px);
   letter-spacing: -0.02em;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
   word-break: break-word;
   overflow-wrap: break-word;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease 0.35s, transform 0.6s ease 0.35s;
 }
 
-.hero-slide.active .hero-title {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Subtitle Description */
 .hero-subtitle {
   font-family: 'Outfit', sans-serif;
   font-size: clamp(0.85rem, 1.6vw, 1.3rem);
@@ -146,27 +129,47 @@
   margin: 0 0 clamp(16px, 2.5vw, 32px);
   max-width: clamp(240px, 34vw, 500px);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Sequential Word-by-Word Animation Keyframe Engine with Natural Word Spacing */
+.hero-word-animate {
+  display: inline-block;
+  margin-right: 0.28em;
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+  transform: translateY(14px);
+  will-change: opacity, transform;
 }
 
-.hero-slide.active .hero-subtitle {
-  opacity: 1;
-  transform: translateY(0);
+.hero-word-animate:last-child {
+  margin-right: 0;
 }
 
-.hero-cta-wrapper {
+.hero-slide.active .hero-word-animate {
+  animation: heroWordFadeUp 0.45s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.hero-cta-animate {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease 0.65s, transform 0.6s ease 0.65s;
+  transform: translateY(14px);
+  will-change: opacity, transform;
 }
 
-.hero-slide.active .hero-cta-wrapper {
-  opacity: 1;
-  transform: translateY(0);
+.hero-slide.active .hero-cta-animate {
+  animation: heroWordFadeUp 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
+@keyframes heroWordFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA Button Styling */
 .hero-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -290,28 +293,41 @@
   }
 }
 
+@media (max-width: 860px) {
+  .hero-content-container {
+    padding: 32px clamp(16px, 4vw, 32px) 32px;
+  }
+}
+
 @media (max-width: 768px) {
   .anusthan-hero-section {
     height: 62vh;
-    min-height: 460px;
+    min-height: 440px;
   }
   .hero-img {
     object-position: 72% center;
-  }
-  .hero-content-container {
-    padding: 80px clamp(16px, 4vw, 32px) 32px;
   }
 }
 
 @media (max-width: 480px) {
   .anusthan-hero-section {
-    height: 440px;
-    min-height: 420px;
+    height: 420px;
+    min-height: 400px;
   }
   .hero-img {
     object-position: 75% center;
   }
   .hero-content-container {
-    padding: 76px 16px 28px;
+    padding: 24px 16px 24px;
+  }
+}
+
+/* Prefers Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word-animate,
+  .hero-cta-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

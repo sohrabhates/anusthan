@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ANUSTHAN HEADER & MOBILE NAVIGATION DRAWER
+   ANUSTHAN HEADER & RESPONSIVE TOP DROPDOWN NAVIGATION SYSTEM
    ========================================================================== */
 
 .anusthan-header {
@@ -9,17 +9,16 @@
   right: 0;
   width: 100%;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(28, 25, 23, 0.92) 0%, rgba(28, 25, 23, 0.65) 70%, rgba(28, 25, 23, 0) 100%);
+  background: linear-gradient(180deg, rgba(28, 25, 23, 0.94) 0%, rgba(28, 25, 23, 0.70) 70%, rgba(28, 25, 23, 0) 100%);
   backdrop-filter: blur(8px);
   border-top: 3px solid #C6A15B;
   border-bottom: 1px solid rgba(198, 161, 91, 0.25);
-  transition: background 0.3s ease, position 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
 }
 
 .anusthan-header.inner-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   background: #1C1917;
   border-bottom: 1px solid #C6A15B;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -27,7 +26,7 @@
 
 .anusthan-header.scrolled {
   position: fixed;
-  background: rgba(28, 25, 23, 0.96);
+  background: rgba(28, 25, 23, 0.98);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -61,6 +60,7 @@
   transform: scale(1.03);
 }
 
+/* Desktop Navigation Links (>860px) */
 .anusthan-desktop-nav {
   display: flex;
   align-items: center;
@@ -74,7 +74,6 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #F8F4EA;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
   text-decoration: none;
   position: relative;
   padding: 6px 0;
@@ -98,7 +97,8 @@
   border-radius: 2px;
 }
 
-.anusthan-mobile-toggle {
+/* Mobile/Tablet Menu Toggle Button */
+.anusthan-mobile-toggle-btn {
   display: none;
   background: transparent;
   border: none;
@@ -107,141 +107,19 @@
   padding: 8px;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* ==========================================================================
-   MOBILE NAVIGATION DRAWER & BACKDROP OVERLAY
-   Transform-based offscreen drawer (Zero Page Squeezing / Compression)
-   ========================================================================== */
-.anusthan-mobile-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 82vw;
-  max-width: 320px;
-  height: 100vh;
-  height: 100dvh;
-  background: #1C1917;
-  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.8);
-  z-index: 10000;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border-left: 2px solid #C6A15B;
-  box-sizing: border-box;
-}
-
-.anusthan-mobile-drawer.open {
-  transform: translateX(0);
-}
-
-.mobile-drawer-header {
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(198, 161, 91, 0.3);
-  background: #151311;
-}
-
-.mobile-logo-img {
-  height: 40px;
-  width: auto;
-}
-
-.mobile-close-btn {
-  background: transparent;
-  border: none;
-  color: #F8F4EA;
-  cursor: pointer;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background 0.2s ease;
-}
-
-.mobile-close-btn:hover {
-  background: rgba(198, 161, 91, 0.15);
-}
-
-.mobile-nav-links {
-  display: flex;
-  flex-direction: column;
-  padding: 24px 20px;
-  gap: 10px;
-  flex: 1;
-  overflow-y: auto;
-}
-
-.mobile-nav-item {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #F8F4EA;
-  text-decoration: none;
-  padding: 13px 18px;
-  border-radius: 8px;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-  border-left: 3px solid transparent;
-}
-
-.mobile-nav-item:hover,
-.mobile-nav-item.active {
+.anusthan-mobile-toggle-btn:hover {
   color: #C6A15B;
-  background: rgba(198, 161, 91, 0.14);
-  border-left-color: #C6A15B;
+  background: rgba(198, 161, 91, 0.12);
 }
 
-.mobile-drawer-footer {
-  padding: 20px 24px;
-  border-top: 1px solid rgba(198, 161, 91, 0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  background: #151311;
-}
-
-.mobile-contact-link {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #25D366;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.mobile-location-text {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.84rem;
-  color: #A8A29E;
-}
-
-.anusthan-mobile-overlay {
-  position: fixed;
-  inset: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 9999;
-}
-
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE BREAKPOINTS & TOP DROPDOWN MENU */
 @media (max-width: 1024px) {
   .anusthan-desktop-nav {
-    gap: 24px;
+    gap: 22px;
   }
   .anusthan-nav-item {
     font-size: 0.82rem;
@@ -249,29 +127,102 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
+  .anusthan-header {
+    position: relative !important; /* Document flow so Header + Dropdown PUSHES Hero down naturally! */
+    width: 100%;
+    background: #1C1917 !important;
+    border-bottom: 2px solid #C6A15B;
+    backdrop-filter: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
   .anusthan-desktop-nav {
     display: none;
   }
-  .anusthan-mobile-toggle {
+
+  .anusthan-mobile-toggle-btn {
     display: flex;
   }
+
   .anusthan-header-container {
-    padding: 12px 20px;
-    height: 76px;
+    height: 68px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .anusthan-logo-img {
+    height: 42px;
+  }
+
+  /* Clean Top Dropdown directly below top bar in normal document flow (pushes hero down!) */
+  .anusthan-mobile-dropdown-nav {
+    width: 100%;
+    background: #151311;
+    border-top: 1px solid rgba(198, 161, 91, 0.3);
+    border-bottom: 2px solid #C6A15B;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    animation: slideDownMenu 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  }
+
+  .mobile-dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     width: 100%;
   }
-  .anusthan-logo-img {
-    height: 44px;
+
+  .mobile-dropdown-item {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #F8F4EA;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background: rgba(248, 244, 234, 0.04);
+    border: 1px solid rgba(198, 161, 91, 0.15);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .mobile-dropdown-item:hover,
+  .mobile-dropdown-item.active {
+    color: #1C1917;
+    background: #C6A15B;
+    border-color: #C6A15B;
+    font-weight: 700;
   }
 }
 
-@media (max-width: 390px) {
+@keyframes slideDownMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 430px) {
   .anusthan-header-container {
-    padding: 10px 16px;
-    height: 70px;
+    padding: 10px 14px;
+    height: 64px;
   }
   .anusthan-logo-img {
     height: 38px;
+  }
+  .anusthan-mobile-dropdown-nav {
+    padding: 10px 14px;
+  }
+  .mobile-dropdown-item {
+    font-size: 0.88rem;
+    padding: 10px 14px;
   }
 }

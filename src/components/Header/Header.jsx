@@ -23,19 +23,12 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Close mobile dropdown when route changes
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [mobileMenuOpen]);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
-  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
@@ -51,7 +44,7 @@ export const Header = () => {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation Links (>860px) */}
         <nav className="anusthan-desktop-nav" aria-label="Main Navigation">
           <NavLink to="/" className={({ isActive }) => `anusthan-nav-item ${isActive ? 'active' : ''}`} end>
             Home
@@ -73,70 +66,54 @@ export const Header = () => {
           </NavLink>
         </nav>
 
-        {/* Mobile Menu Toggle Button */}
+        {/* Mobile/Tablet Menu Button (<=860px) */}
         <button 
-          className="anusthan-mobile-toggle"
+          className="anusthan-mobile-toggle-btn"
           onClick={toggleMobileMenu}
-          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           type="button"
         >
           {mobileMenuOpen ? (
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 6L6 18M6 6l12 12" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           ) : (
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 6h16M4 12h16M4 18h16" />
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="18" x2="20" y2="18" />
             </svg>
           )}
         </button>
 
       </div>
 
-      {/* Mobile Navigation Drawer */}
-      <div className={`anusthan-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
-        <div className="mobile-drawer-header">
-          <Link to="/" onClick={closeMobileMenu}>
-            <img src={brandInfo.logo} alt={brandInfo.name} className="mobile-logo-img" />
-          </Link>
-          <button className="mobile-close-btn" onClick={closeMobileMenu} aria-label="Close menu" type="button">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <nav className="mobile-nav-links">
-          <NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`} end>
-            Home
-          </NavLink>
-          <NavLink to="/about" onClick={closeMobileMenu} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-            About Us
-          </NavLink>
-          <NavLink to="/our-rice" onClick={closeMobileMenu} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-            Our Rice
-          </NavLink>
-          <NavLink to="/gallery" onClick={closeMobileMenu} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-            Gallery
-          </NavLink>
-          <NavLink to="/blog" onClick={closeMobileMenu} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-            Blog
-          </NavLink>
-          <NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
-            Contact
-          </NavLink>
-        </nav>
-        <div className="mobile-drawer-footer">
-          <a href="tel:+919647155570" className="mobile-contact-link">
-            📞 +91 9647155570
-          </a>
-          <span className="mobile-location-text">📍 Purba Bardhaman, India</span>
-        </div>
-      </div>
-
-      {/* Backdrop Overlay */}
+      {/* Clean Mobile/Tablet Top Dropdown Menu (In normal document flow, pushes hero down naturally!) */}
       {mobileMenuOpen && (
-        <div className="anusthan-mobile-overlay" onClick={closeMobileMenu}></div>
+        <nav className="anusthan-mobile-dropdown-nav" aria-label="Mobile Navigation Dropdown">
+          <div className="mobile-dropdown-links">
+            <NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => `mobile-dropdown-item ${isActive ? 'active' : ''}`} end>
+              Home
+            </NavLink>
+            <NavLink to="/about" onClick={closeMobileMenu} className={({ isActive }) => `mobile-dropdown-item ${isActive ? 'active' : ''}`}>
+              About Us
+            </NavLink>
+            <NavLink to="/our-rice" onClick={closeMobileMenu} className={({ isActive }) => `mobile-dropdown-item ${isActive ? 'active' : ''}`}>
+              Our Rice
+            </NavLink>
+            <NavLink to="/gallery" onClick={closeMobileMenu} className={({ isActive }) => `mobile-dropdown-item ${isActive ? 'active' : ''}`}>
+              Gallery
+            </NavLink>
+            <NavLink to="/blog" onClick={closeMobileMenu} className={({ isActive }) => `mobile-dropdown-item ${isActive ? 'active' : ''}`}>
+              Blog
+            </NavLink>
+            <NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => `mobile-dropdown-item ${isActive ? 'active' : ''}`}>
+              Contact
+            </NavLink>
+          </div>
+        </nav>
       )}
     </header>
   );

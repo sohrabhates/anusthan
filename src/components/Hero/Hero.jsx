@@ -2,6 +2,24 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { heroSlides } from '../../data/content';
 import './Hero.css';
 
+// Helper function to split text into individual animated word spans with natural CSS word spacing
+const renderAnimatedWords = (text, baseClass, startDelay = 0.1, delayStep = 0.12) => {
+  if (!text) return null;
+  const words = text.split(' ');
+  return words.map((word, wIdx) => {
+    const delay = (startDelay + wIdx * delayStep).toFixed(2);
+    return (
+      <span 
+        key={`${word}-${wIdx}`} 
+        className={`${baseClass}-word hero-word-animate`}
+        style={{ animationDelay: `${delay}s` }}
+      >
+        {word}
+      </span>
+    );
+  });
+};
+
 export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -39,13 +57,18 @@ export const Hero = () => {
       <div className="hero-slides-wrapper">
         {heroSlides.map((slide, idx) => {
           const isActive = idx === currentSlide;
+          const titleWordCount = slide.title ? slide.title.split(' ').length : 0;
+          const subtitleDelay = (0.2 + titleWordCount * 0.12).toFixed(2);
+          const subtitleWordCount = slide.subtitle ? slide.subtitle.split(' ').length : 0;
+          const ctaDelay = (parseFloat(subtitleDelay) + subtitleWordCount * 0.10 + 0.1).toFixed(2);
+
           return (
             <div 
               key={slide.id} 
               className={`hero-slide ${slide.id} ${isActive ? 'active' : ''}`}
               aria-hidden={!isActive}
             >
-              {/* Full Width Imagery */}
+              {/* Full Width Imagery — Completely Stable (NO image animation) */}
               <div className="hero-image-box">
                 <img 
                   src={slide.image} 
@@ -56,13 +79,30 @@ export const Hero = () => {
                 <div className="hero-overlay"></div>
               </div>
 
-              {/* Restrained Editorial Content */}
+              {/* Sequential Word-by-Word Text Entrance Overlay */}
               <div className="hero-content-container">
-                <div className="hero-content-inner">
-                  <span className="hero-eyebrow">{slide.eyebrow}</span>
-                  <h1 className="hero-title">{slide.title}</h1>
-                  <p className="hero-subtitle">{slide.subtitle}</p>
-                  <div className="hero-cta-wrapper">
+                <div className="hero-content-inner" key={`hero-text-${currentSlide}-${slide.id}`}>
+                  
+                  {/* Eyebrow Label */}
+                  <span className="hero-eyebrow">
+                    {renderAnimatedWords(slide.eyebrow, 'hero-eyebrow', 0.05, 0.1)}
+                  </span>
+
+                  {/* Main Heading Word-by-Word */}
+                  <h1 className="hero-title">
+                    {renderAnimatedWords(slide.title, 'hero-title', 0.18, 0.12)}
+                  </h1>
+
+                  {/* Subtitle Word-by-Word */}
+                  <p className="hero-subtitle">
+                    {renderAnimatedWords(slide.subtitle, 'hero-subtitle', parseFloat(subtitleDelay), 0.1)}
+                  </p>
+
+                  {/* CTA Button Fade-Up After Text Finishes */}
+                  <div 
+                    className="hero-cta-wrapper hero-cta-animate"
+                    style={{ animationDelay: `${ctaDelay}s` }}
+                  >
                     <a href={slide.ctaLink} className="hero-cta-btn">
                       <span>{slide.ctaText}</span>
                       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,6 +110,7 @@ export const Hero = () => {
                       </svg>
                     </a>
                   </div>
+
                 </div>
               </div>
             </div>
