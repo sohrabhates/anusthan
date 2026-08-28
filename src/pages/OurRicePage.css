@@ -130,6 +130,11 @@
   gap: 28px;
 }
 
+.catalogue-products-grid .anusthan-product-card-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 .grid-product-card-wrap {
   display: flex;
   justify-content: center;
