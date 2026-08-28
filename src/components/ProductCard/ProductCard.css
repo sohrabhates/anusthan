@@ -135,7 +135,8 @@
 
 @media (max-width: 767px) {
   .anusthan-product-card-wrapper {
-    width: 235px;
+    width: 100%;
+    max-width: 100%;
     gap: 10px;
   }
   .product-card-image-wrap {

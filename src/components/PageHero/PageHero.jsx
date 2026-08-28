@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './PageHero.css';
 
-export const PageHero = ({ eyebrow, title, description, breadcrumb }) => {
+export const PageHero = ({ eyebrow, title, description, breadcrumb, bgImage }) => {
+  const customBgStyle = bgImage ? {
+    backgroundImage: `radial-gradient(circle at 50% 30%, rgba(198, 161, 91, 0.12) 0%, rgba(28, 25, 23, 0.72) 70%), url('${bgImage}')`
+  } : {};
+
   return (
-    <section className="anusthan-page-hero">
+    <section className="anusthan-page-hero" style={customBgStyle}>
       <div className="page-hero-overlay"></div>
       <div className="page-hero-container">
         

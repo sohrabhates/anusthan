@@ -41,6 +41,7 @@ export const OurRicePage = ({ onSelectProduct }) => {
         title="Our Rice Catalogue"
         description="Explore our complete line of 100% pure Indian rice varieties, meticulously parboiled, aged, and polished to perfection."
         breadcrumb="Our Rice"
+        bgImage="/images/hero/hero1.jpeg"
       />
 
       {/* Catalogue Filter & Search Bar */}

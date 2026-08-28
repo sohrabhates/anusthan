@@ -1,10 +1,10 @@
 .anusthan-page-hero {
   position: relative;
   background: #1C1917;
-  background-image: radial-gradient(circle at 50% 30%, rgba(198, 161, 91, 0.18) 0%, rgba(28, 25, 23, 0.98) 70%), url('/images/rice10.webp');
+  background-image: radial-gradient(circle at 50% 30%, rgba(198, 161, 91, 0.12) 0%, rgba(28, 25, 23, 0.75) 70%), url('/images/hero/hero1.jpeg');
   background-size: cover;
   background-position: center;
-  padding: 120px 24px 70px;
+  padding: 130px 24px 75px;
   text-align: center;
   border-bottom: 2px solid #C6A15B;
   overflow: hidden;
@@ -13,8 +13,8 @@
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(28, 25, 23, 0.85);
-  backdrop-filter: blur(3px);
+  background: rgba(28, 25, 23, 0.55);
+  backdrop-filter: blur(2px);
   z-index: 1;
 }
 
